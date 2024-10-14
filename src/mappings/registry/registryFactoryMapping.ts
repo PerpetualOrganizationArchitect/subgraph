@@ -1,6 +1,6 @@
 import { Address, dataSource, json, log, ipfs, Bytes, DataSourceTemplate } from "@graphprotocol/graph-ts";
-import { RegistryCreated as RegistryContractCreatedEvent } from "../../generated/RegistryFactory/RegistryFactory";
-import { infoIPFS, aboutLink, RegistryCreated, Registry, ValidContract, PerpetualOrganization } from "../../generated/schema";
+import { RegistryCreated as RegistryContractCreatedEvent } from "../../../generated/RegistryFactory/RegistryFactory";
+import { infoIPFS, aboutLink, RegistryCreated, Registry, ValidContract, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
 import { JSONValueKind } from "@graphprotocol/graph-ts";
 

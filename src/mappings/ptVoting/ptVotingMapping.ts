@@ -1,7 +1,7 @@
 import { log} from "@graphprotocol/graph-ts"
 import { BigInt } from "@graphprotocol/graph-ts"
-import { NewProposal, Voted, PollOptionNames, WinnerAnnounced } from "../../generated/templates/ParticipationVoting/ParticipationVoting"
-import { PTProposal, PTPollOption,PTVote , PTVoting, User, PTVoteWeight} from "../../generated/schema"
+import { NewProposal, Voted, PollOptionNames, WinnerAnnounced } from "../../../generated/templates/ParticipationVoting/ParticipationVoting"
+import { PTProposal, PTPollOption,PTVote , PTVoting, User, PTVoteWeight} from "../../../generated/schema"
 
 export function handleNewProposal(event: NewProposal): void {
   log.info("Triggered handleNewProposal", []);

@@ -1,6 +1,6 @@
 import { BigInt, log } from "@graphprotocol/graph-ts"
-import { mintedNFT as MintEvent, membershipTypeChanged } from "../../generated/templates/NFTMembership/NFTMembership"
-import {NFTMintEvent,NFTChangeTypeEvent, User, NFTMembership, PerpetualOrganization } from "../../generated/schema"
+import { mintedNFT as MintEvent, membershipTypeChanged } from "../../../generated/templates/NFTMembership/NFTMembership"
+import {NFTMintEvent,NFTChangeTypeEvent, User, NFTMembership, PerpetualOrganization } from "../../../generated/schema"
 import { dataSource } from '@graphprotocol/graph-ts'
 
 

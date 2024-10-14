@@ -1,7 +1,7 @@
 import {log } from "@graphprotocol/graph-ts";
-import { TokenCreated } from "../../generated/DirectDemocracyTokenFactory/DirectDemocracyTokenFactory";
-import { DDTokenCreated, DDToken, DDAllowedRoleName, PerpetualOrganization } from "../../generated/schema";
-import {DirectDemocracyToken as tokenTemplate} from "../../generated/templates";
+import { TokenCreated } from "../../../generated/DirectDemocracyTokenFactory/DirectDemocracyTokenFactory";
+import { DDTokenCreated, DDToken, DDAllowedRoleName, PerpetualOrganization } from "../../../generated/schema";
+import {DirectDemocracyToken as tokenTemplate} from "../../../generated/templates";
 
 export function handleTokenCreated(event: TokenCreated): void {
   log.info("Triggered handleTokenCreated", []);

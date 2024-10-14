@@ -1,8 +1,8 @@
 import { Address, dataSource, log, BigInt } from "@graphprotocol/graph-ts";
-import { TaskManagerCreated as TaskManagerCreatedEvent } from "../../generated/TaskManagerFactory/TaskManagerFactory";
-import { TaskManagerCreated, TaskManager,PerpetualOrganization } from "../../generated/schema";
+import { TaskManagerCreated as TaskManagerCreatedEvent } from "../../../generated/TaskManagerFactory/TaskManagerFactory";
+import { TaskManagerCreated, TaskManager,PerpetualOrganization } from "../../../generated/schema";
 import {DataSourceContext} from "@graphprotocol/graph-ts";
-import {TaskManager as taskManagerTemplate} from "../../generated/templates";
+import {TaskManager as taskManagerTemplate} from "../../../generated/templates";
 
 export function handleTaskManagerCreated(event: TaskManagerCreatedEvent): void {
     log.info("Triggered handleTaskManagerCreated", []);

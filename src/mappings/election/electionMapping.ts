@@ -1,8 +1,8 @@
 import { log} from "@graphprotocol/graph-ts"
 import { BigInt } from "@graphprotocol/graph-ts"
-import { ElectionCreated, CandidateAdded, ElectionConcluded } from "../../generated/templates/ElectionContract/ElectionContract"
+import { ElectionCreated, CandidateAdded, ElectionConcluded } from "../../../generated/templates/ElectionContract/ElectionContract"
 
-import { Election, Candidate } from "../../generated/schema"
+import { Election, Candidate } from "../../../generated/schema"
 
 
 export function handleElectionCreated(event: ElectionCreated): void {

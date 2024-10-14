@@ -1,8 +1,8 @@
 import { Address, dataSource, log } from "@graphprotocol/graph-ts";
-import { VotingContractCreated } from "../../generated/ParticipationVotingFactory/ParticipationVotingFactory";
-import { PTVotingCreated, PTVoting, PerpetualOrganization } from "../../generated/schema";
+import { VotingContractCreated } from "../../../generated/ParticipationVotingFactory/ParticipationVotingFactory";
+import { PTVotingCreated, PTVoting, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import {ParticipationVoting as votingTemplate} from "../../generated/templates";
+import {ParticipationVoting as votingTemplate} from "../../../generated/templates";
 
 export function handleVotingContractCreated(event: VotingContractCreated): void {
     log.info("Triggered handleVotingContractCreated", []);

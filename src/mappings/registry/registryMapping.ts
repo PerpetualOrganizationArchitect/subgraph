@@ -1,6 +1,6 @@
 import { log, DataSourceContext, DataSourceTemplate } from "@graphprotocol/graph-ts"
-import {ContractAdded, ContractUpgraded, VotingControlAddressSet, Initialized, infoChange, logoChange} from "../../generated/templates/Registry/Registry"
-import {Registry, ValidContract,PerpetualOrganization} from "../../generated/schema"
+import {ContractAdded, ContractUpgraded, VotingControlAddressSet, Initialized, infoChange, logoChange} from "../../../generated/templates/Registry/Registry"
+import {Registry, ValidContract,PerpetualOrganization} from "../../../generated/schema"
 import { dataSource } from '@graphprotocol/graph-ts'
 
 let POHASH_KEY = "POHASH";

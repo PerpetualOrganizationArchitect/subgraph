@@ -1,6 +1,6 @@
-import { EducationHubCreated } from "../../generated/EducationHubFactory/EducationHubFactory";
-import { EducationHubContract, PerpetualOrganization } from "../../generated/schema";
-import {EducationHub as educationHubTemplate} from "../../generated/templates";
+import { EducationHubCreated } from "../../../generated/EducationHubFactory/EducationHubFactory";
+import { EducationHubContract, PerpetualOrganization } from "../../../generated/schema";
+import {EducationHub as educationHubTemplate} from "../../../generated/templates";
 
 export function handleEducationHubCreated(event: EducationHubCreated): void {
   let entity = new EducationHubContract(event.params.educationHubAddress.toHex());

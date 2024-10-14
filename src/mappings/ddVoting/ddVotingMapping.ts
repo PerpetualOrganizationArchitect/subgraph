@@ -1,7 +1,7 @@
 import { log} from "@graphprotocol/graph-ts"
 import { BigInt } from "@graphprotocol/graph-ts"
-import { NewProposal, Voted, PollOptionNames, WinnerAnnounced, ElectionContractSet } from "../../generated/templates/DirectDemocracyVoting/DirectDemocracyVoting"
-import { DDProposal, DDPollOption,DDVote, DDVoting, User, DDVoteWeight } from "../../generated/schema"
+import { NewProposal, Voted, PollOptionNames, WinnerAnnounced, ElectionContractSet } from "../../../generated/templates/DirectDemocracyVoting/DirectDemocracyVoting"
+import { DDProposal, DDPollOption,DDVote, DDVoting, User, DDVoteWeight } from "../../../generated/schema"
 
 export function handlePollCreated(event: NewProposal): void {
   log.info("Triggered handleNewProposal", []);

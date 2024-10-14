@@ -1,8 +1,8 @@
 import { Address, dataSource, log, BigInt } from "@graphprotocol/graph-ts";
-import { ContractCreated } from "../../generated/NFTMembershipFactory/NFTMembershipFactory";
-import { NFTMembershipCreated, NFTMembership, NFTMemberType, PerpetualOrganization } from "../../generated/schema";
+import { ContractCreated } from "../../../generated/NFTMembershipFactory/NFTMembershipFactory";
+import { NFTMembershipCreated, NFTMembership, NFTMemberType, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import { NFTMembership as membershipTemplate } from "../../generated/templates";
+import { NFTMembership as membershipTemplate } from "../../../generated/templates";
 
 export function handleContractCreated(event: ContractCreated): void {
   log.info("Triggered handleMembershipContractCreated", []);

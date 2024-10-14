@@ -1,8 +1,8 @@
 import { Address, dataSource, log, BigInt } from "@graphprotocol/graph-ts";
-import { TokenCreated } from "../../generated/ParticipationTokenFactory/ParticipationTokenFactory";
-import { PTTokenCreated, PTToken, PerpetualOrganization } from "../../generated/schema";
+import { TokenCreated } from "../../../generated/ParticipationTokenFactory/ParticipationTokenFactory";
+import { PTTokenCreated, PTToken, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import {ParticipationToken as tokenTemplate} from "../../generated/templates";
+import {ParticipationToken as tokenTemplate} from "../../../generated/templates";
 
 export function handleTokenCreated(event: TokenCreated): void {
     log.info("Triggered handleTokenCreated", []);

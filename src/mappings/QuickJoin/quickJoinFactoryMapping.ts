@@ -1,6 +1,6 @@
 import { Address, dataSource, log } from "@graphprotocol/graph-ts";
-import { QuickJoinDeployed } from "../../generated/QuickJoinFactory/QuickJoinFactory";
-import { QuickJoinContract, PerpetualOrganization} from "../../generated/schema";
+import { QuickJoinDeployed } from "../../../generated/QuickJoinFactory/QuickJoinFactory";
+import { QuickJoinContract, PerpetualOrganization} from "../../../generated/schema";
 
 
 

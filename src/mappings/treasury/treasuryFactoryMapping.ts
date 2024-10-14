@@ -1,8 +1,8 @@
 import { Address, dataSource, log } from "@graphprotocol/graph-ts";
-import { TreasuryCreated as TreasuryCreatedEvent } from "../../generated/TreasuryFactory/TreasuryFactory";
-import { TreasuryCreated, Treasury, PerpetualOrganization} from "../../generated/schema";
+import { TreasuryCreated as TreasuryCreatedEvent } from "../../../generated/TreasuryFactory/TreasuryFactory";
+import { TreasuryCreated, Treasury, PerpetualOrganization} from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import {Treasury as treasuryTemplate} from "../../generated/templates";
+import {Treasury as treasuryTemplate} from "../../../generated/templates";
 
 
 export function handleTreasuryCreated(event: TreasuryCreatedEvent): void{

@@ -1,7 +1,7 @@
 import { log} from "@graphprotocol/graph-ts"
 import { BigInt } from "@graphprotocol/graph-ts"
-import { NewProposal, Voted, PollOptionNames, WinnerAnnounced } from "../../generated/templates/HybridVoting/HybridVoting"
-import { HybridProposal, HybridPollOption,HybridVote, HybridVoting, User, HybridVoteWeight } from "../../generated/schema"
+import { NewProposal, Voted, PollOptionNames, WinnerAnnounced } from "../../../generated/templates/HybridVoting/HybridVoting"
+import { HybridProposal, HybridPollOption,HybridVote, HybridVoting, User, HybridVoteWeight } from "../../../generated/schema"
 
 
 export function handleNewProposal(event: NewProposal): void {

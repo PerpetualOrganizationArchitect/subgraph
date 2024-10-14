@@ -1,6 +1,6 @@
 import { log, json, Bytes, BigInt, DataSourceTemplate } from "@graphprotocol/graph-ts";
-import { ModuleCreated, ModuleCompleted as ModuleCompletedEvent } from "../../generated/templates/EducationHub/EducationHub";
-import { Module, ModuleInfo, ModuleAnswer, EducationHubContract, ModuleCompletion, User } from "../../generated/schema";
+import { ModuleCreated, ModuleCompleted as ModuleCompletedEvent } from "../../../generated/templates/EducationHub/EducationHub";
+import { Module, ModuleInfo, ModuleAnswer, EducationHubContract, ModuleCompletion, User } from "../../../generated/schema";
 import { dataSource } from '@graphprotocol/graph-ts';
 import { DataSourceContext } from "@graphprotocol/graph-ts";
 import { JSONValueKind } from "@graphprotocol/graph-ts";

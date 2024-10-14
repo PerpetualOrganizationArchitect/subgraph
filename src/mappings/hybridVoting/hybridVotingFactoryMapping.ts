@@ -1,8 +1,8 @@
 import { Address, dataSource, log } from "@graphprotocol/graph-ts";
-import { HybridVotingContractCreated } from "../../generated/HybridVotingFactory/HybridVotingFactory";
-import { HybridVotingCreated, HybridVoting, PerpetualOrganization } from "../../generated/schema";
+import { HybridVotingContractCreated } from "../../../generated/HybridVotingFactory/HybridVotingFactory";
+import { HybridVotingCreated, HybridVoting, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import {HybridVoting as votingTemplate} from "../../generated/templates";
+import {HybridVoting as votingTemplate} from "../../../generated/templates";
 
 export function handleVotingContractCreated(event: HybridVotingContractCreated): void {
     log.info("Triggered handleVotingContractCreated", []);

@@ -1,8 +1,8 @@
 import { Address, dataSource, log } from "@graphprotocol/graph-ts";
-import { VotingContractCreated } from "../../generated/DirectDemocracyVotingFactory/DirectDemocracyVotingFactory";
-import { DDVotingCreated, DDVoting, PerpetualOrganization } from "../../generated/schema";
+import { VotingContractCreated } from "../../../generated/DirectDemocracyVotingFactory/DirectDemocracyVotingFactory";
+import { DDVotingCreated, DDVoting, PerpetualOrganization } from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
-import {DirectDemocracyVoting as votingTemplate} from "../../generated/templates";
+import {DirectDemocracyVoting as votingTemplate} from "../../../generated/templates";
 
 
 export function handleVotingContractCreated(event: VotingContractCreated): void {

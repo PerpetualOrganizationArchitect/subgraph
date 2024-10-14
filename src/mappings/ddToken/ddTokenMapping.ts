@@ -1,6 +1,6 @@
 import { log } from "@graphprotocol/graph-ts"
-import { Mint as MintEvent } from "../../generated/templates/DirectDemocracyToken/DirectDemocracyToken"
-import { DDTokenMintEvent, DDToken, User } from "../../generated/schema"
+import { Mint as MintEvent } from "../../../generated/templates/DirectDemocracyToken/DirectDemocracyToken"
+import { DDTokenMintEvent, DDToken, User } from "../../../generated/schema"
 
 export function handleTokenMint(event: MintEvent): void {
   log.info("Triggered handleTokenMint", [])

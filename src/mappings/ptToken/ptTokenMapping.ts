@@ -1,6 +1,6 @@
 import { dataSource, json, Bytes, log, DataSourceTemplate, DataSourceContext } from "@graphprotocol/graph-ts"
-import { Mint as MintEvent, TaskManagerAddressSet, TokenRequested, TokenRequestApproved } from "../../generated/templates/ParticipationToken/ParticipationToken"
-import { PTTokenMintEvent, PTToken, User, TokenRequest, TokenRequestInfo } from "../../generated/schema"
+import { Mint as MintEvent, TaskManagerAddressSet, TokenRequested, TokenRequestApproved } from "../../../generated/templates/ParticipationToken/ParticipationToken"
+import { PTTokenMintEvent, PTToken, User, TokenRequest, TokenRequestInfo } from "../../../generated/schema"
 
 export function handleTokenMint(event: MintEvent): void {
   log.info("Triggered handleTokenMint", [])

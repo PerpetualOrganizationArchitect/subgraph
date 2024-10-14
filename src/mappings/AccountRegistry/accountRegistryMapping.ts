@@ -3,8 +3,8 @@ import {
   AccountManager,
   UserRegistered,
   UsernameChanged
-} from "../../generated/UniversalAccountRegistry/AccountManager"
-import { Account } from "../../generated/schema"
+} from "../../../generated/UniversalAccountRegistry/AccountManager"
+import { Account } from "../../../generated/schema"
 
 export function handleUserRegistered(event: UserRegistered): void {
   log.info("Triggered UserRegistered: {}", [event.params.username])

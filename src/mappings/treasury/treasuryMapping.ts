@@ -1,6 +1,6 @@
 import { log, Bytes } from "@graphprotocol/graph-ts"
-import {VotingContractSet, TokensReceived, TokensSent, EtherReceived  } from "../../generated/templates/Treasury/Treasury"
-import { Treasury, TreasuryWithdrawal, TreasuryDeposit} from "../../generated/schema";
+import {VotingContractSet, TokensReceived, TokensSent, EtherReceived  } from "../../../generated/templates/Treasury/Treasury"
+import { Treasury, TreasuryWithdrawal, TreasuryDeposit} from "../../../generated/schema";
 import { DataSourceContext } from "@graphprotocol/graph-ts";
 
 export function handleVotingSet(event: VotingContractSet): void{

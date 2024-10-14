@@ -1,6 +1,6 @@
 import { log, json, DataSourceTemplate, Bytes, BigInt } from "@graphprotocol/graph-ts";
-import {TaskSubmitted as TaskSubmittedEvent, TaskCreated as TaskCreatedEvent, TaskClaimed as TaskClaimedEvent, TaskUpdated as TaskUpdatedEvent, TaskCompleted as TaskCompletedEvent, ProjectCreated as ProjectCreatedEvent, ProjectDeleted as ProjectDeletedEvent, TaskSubmitted } from "../../generated/templates/TaskManager/TaskManager";
-import { TaskInfo, TaskManager, Task, Project } from "../../generated/schema";
+import {TaskSubmitted as TaskSubmittedEvent, TaskCreated as TaskCreatedEvent, TaskClaimed as TaskClaimedEvent, TaskUpdated as TaskUpdatedEvent, TaskCompleted as TaskCompletedEvent, ProjectCreated as ProjectCreatedEvent, ProjectDeleted as ProjectDeletedEvent, TaskSubmitted } from "../../../generated/templates/TaskManager/TaskManager";
+import { TaskInfo, TaskManager, Task, Project } from "../../../generated/schema";
 import { dataSource } from '@graphprotocol/graph-ts';
 import { DataSourceContext } from "@graphprotocol/graph-ts";
 import { JSONValueKind } from "@graphprotocol/graph-ts";
