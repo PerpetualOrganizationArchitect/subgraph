@@ -1,0 +1,9 @@
+node_modules/
+src/types/
+.DS_STORE
+yarn-error.log
+tests/.bin/
+tests/.docker/
+tests/.latest.json
+src/build
+src/generated
