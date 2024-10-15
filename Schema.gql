@@ -375,6 +375,8 @@ type HybridProposal @entity {
   voting: HybridVoting! @link
   description: String!
   totalVotes: BigInt!
+  totalVotesDD: BigInt!
+  totalVotesPT: BigInt!
   timeInMinutes: BigInt!
   creationTimestamp: BigInt!
   experationTimestamp: BigInt!
@@ -393,8 +395,9 @@ type HybridPollOption @entity {
   id: ID!
   proposal: HybridProposal! @link
   name: String!
-  votesPT: BigInt!
-  votesDD: BigInt!
+  optionVotesPT: BigInt!
+  optionVotesDD: BigInt!
+  currentPercentage: BigInt!
 }
 
 type HybridVote @entity {
