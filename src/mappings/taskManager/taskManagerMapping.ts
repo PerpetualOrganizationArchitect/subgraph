@@ -1,4 +1,4 @@
-import { log, json, DataSourceTemplate, Bytes, BigInt } from "@graphprotocol/graph-ts";
+import { log, json, DataSourceTemplate, Bytes, BigInt, store } from "@graphprotocol/graph-ts";
 import {TaskSubmitted as TaskSubmittedEvent, TaskCreated as TaskCreatedEvent, TaskClaimed as TaskClaimedEvent, TaskUpdated as TaskUpdatedEvent, TaskCompleted as TaskCompletedEvent, ProjectCreated as ProjectCreatedEvent, ProjectDeleted as ProjectDeletedEvent, TaskSubmitted } from "../../../generated/templates/TaskManager/TaskManager";
 import { TaskInfo, TaskManager, Task, Project } from "../../../generated/schema";
 import { dataSource } from '@graphprotocol/graph-ts';
@@ -108,6 +108,21 @@ export function handleTaskUpdated(event: TaskUpdatedEvent): void {
   let task = Task.load(event.params.id.toHex() + "-" + event.address.toHex());
   if (!task) {
     log.error("Task not found: {}", [event.params.id.toHex() + "-" + event.address.toHex()]);
+    return;
+  }
+
+  // if payout is 0 delete the task
+  if (event.params.payout.equals(BigInt.fromI32(0))) {
+    
+    let taskManager = TaskManager.load(event.address.toHex());
+    if (!taskManager) {
+      log.error("TaskManager not found: {}", [event.address.toHex()]);
+      return;
+    }
+    taskManager.activeTaskAmount = taskManager.activeTaskAmount.minus(BigInt.fromI32(1));
+    taskManager.save();
+
+    store.remove("Task", event.params.id.toHex() + "-" + event.address.toHex());
     return;
   }
 
