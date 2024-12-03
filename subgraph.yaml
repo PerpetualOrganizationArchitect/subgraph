@@ -502,6 +502,8 @@ templates:
           handler: handleTaskCreated
         - event: ProjectCreated(string)
           handler: handleProjectCreated
+        - event: ProjectDeleted(string)
+          handler: handleProjectDeleted
         - event: TaskUpdated(indexed uint256,uint256,string)
           handler: handleTaskUpdated
         - event: TaskClaimed(indexed uint256,indexed address)

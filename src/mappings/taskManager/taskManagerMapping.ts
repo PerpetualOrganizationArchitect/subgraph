@@ -194,7 +194,7 @@ export function handleProjectCreated(event: ProjectCreatedEvent): void {
 }
 
 export function handleProjectDeleted(event: ProjectDeletedEvent): void {
-  log.info("Triggered handleProjectDeleted", []);
+  log.error("Triggered handleProjectDeleted", []);
 
   let project = Project.load(event.params.projectName + "-" + event.address.toHex());
   if (!project) {
@@ -203,5 +203,7 @@ export function handleProjectDeleted(event: ProjectDeletedEvent): void {
   }
 
   project.deleted = true;
+  // delete project 
+  store.remove("Project", event.params.projectName + "-" + event.address.toHex());
   project.save();
 }
