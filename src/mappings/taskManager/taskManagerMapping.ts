@@ -120,6 +120,7 @@ export function handleTaskUpdated(event: TaskUpdatedEvent): void {
       return;
     }
     taskManager.activeTaskAmount = taskManager.activeTaskAmount.minus(BigInt.fromI32(1));
+    taskManager.deletedTaskAmount = taskManager.deletedTaskAmount.plus(BigInt.fromI32(1));
     taskManager.save();
 
     store.remove("Task", event.params.id.toHex() + "-" + event.address.toHex());
@@ -193,6 +194,7 @@ export function handleProjectCreated(event: ProjectCreatedEvent): void {
   project.save();
 }
 
+// needs to updated to handle proper counting of deleted tasks
 export function handleProjectDeleted(event: ProjectDeletedEvent): void {
   log.error("Triggered handleProjectDeleted", []);
 
@@ -202,8 +204,12 @@ export function handleProjectDeleted(event: ProjectDeletedEvent): void {
     return;
   }
 
+   
   project.deleted = true;
   // delete project 
   store.remove("Project", event.params.projectName + "-" + event.address.toHex());
+
+
+
   project.save();
 }

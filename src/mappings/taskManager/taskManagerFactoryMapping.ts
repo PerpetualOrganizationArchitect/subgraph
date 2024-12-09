@@ -24,6 +24,7 @@ export function handleTaskManagerCreated(event: TaskManagerCreatedEvent): void {
     newTaskManager.POname = event.params.POname;
     newTaskManager.activeTaskAmount = BigInt.fromI32(0);
     newTaskManager.completedTaskAmount = BigInt.fromI32(0);
+    newTaskManager.deletedTaskAmount = BigInt.fromI32(0);
     newTaskManager.save();
 
     taskManagerTemplate.create(event.params.TaskManager);

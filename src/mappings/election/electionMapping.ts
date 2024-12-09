@@ -8,11 +8,12 @@ import { Election, Candidate } from "../../../generated/schema"
 export function handleElectionCreated(event: ElectionCreated): void {
     log.info("Triggered handleElectionCreated", []);
 
-    let entity = new Election(event.params.electionId.toHex());
+    let entity = new Election(event.params.proposalId.toHex());
 
-    entity.proposalId = event.params.proposalId;
+    entity.proposalId = event.params.electionId;// accidentally switched election id and proposal id in emit event on contract
     entity.isActive = true;
     entity.electionContract = event.address.toHex();
+    entity.hasValidWinner= false;
     
     entity.save();
 
