@@ -22,6 +22,7 @@ export function handleTaskCreated(event: TaskCreatedEvent): void {
   }
   taskManager.activeTaskAmount = taskManager.activeTaskAmount.plus(BigInt.fromI32(1));
   taskManager.save();
+  task.save();
 
 
   let context = new DataSourceContext();
@@ -30,8 +31,8 @@ export function handleTaskCreated(event: TaskCreatedEvent): void {
   log.info("Creating TaskInfo template with hash: {}", [task.ipfsHash]);
   DataSourceTemplate.createWithContext("taskInfo", [task.ipfsHash], context);
   task.taskInfo= event.params.ipfsHash;
-
   task.save();
+
 }
 
 export function handleTaskClaimed(event: TaskClaimedEvent): void {
