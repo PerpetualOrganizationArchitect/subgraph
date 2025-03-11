@@ -75,9 +75,15 @@ export function handleTokenRequestApproved(event: TokenRequestApproved): void {
   tokenRequest.approved = true;
   tokenRequest.save();
 
-  let user = User.load(event.params.approver.toHex());
+  let token = PTToken.load(event.address.toHex());
+  if (token == null) {
+    log.error("PTToken not found: {}", [event.address.toHex()]);
+    return;
+  }
+
+  let user = User.load(token.POname+'-'+event.params.approver.toHex());
   if (!user) {
-    user = new User(event.params.approver.toHex());
+    user = new User(token.POname+'-'+event.params.approver.toHex());
     user.save();
   }
 }

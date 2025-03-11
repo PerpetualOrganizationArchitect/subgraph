@@ -28,20 +28,33 @@ export function handleMintedNFT(event: MintEvent): void {
     log.error("PerpetualOrganization not found: {}", [nft.POname]);
     return;
   }
-  po.totalMembers = po.totalMembers.plus(BigInt.fromI32(1));
-  po.save();
-
-  let user = new User(nft.POname+'-'+event.params.recipient.toHex());
-  if (user != null && nft != null) {
+  
+  // Check if user already exists before creating a new one
+  let userId = nft.POname+'-'+event.params.recipient.toHex();
+  let user = User.load(userId);
+  
+  if (user != null) {
+    // User already exists, just update the memberType without resetting stats
+    log.info("User already exists, updating memberType: {}", [userId]);
+    user.memberType = nft.contractAddress.toHex() + "-" + event.params.memberTypeName;
+    user.save();
+  } else {
+    // This is a new user, create with all required fields and increment member count
+    log.info("Creating new user: {}", [userId]);
+    user = new User(userId);
     user.address = event.params.recipient;
-    user.organization= nft.POname
+    user.organization = nft.POname;
     user.ddTokenBalance = BigInt.fromI32(0);
     user.ptTokenBalance = BigInt.fromI32(0);
-    user.memberType = nft.contractAddress.toHex() + "-" + event.params.memberTypeName
+    user.memberType = nft.contractAddress.toHex() + "-" + event.params.memberTypeName;
     user.Account = event.params.recipient.toHex();
     user.totalVotes = BigInt.fromI32(0);
     user.dateJoined = event.block.timestamp;
     user.save();
+    
+    // Only increment total members for new users
+    po.totalMembers = po.totalMembers.plus(BigInt.fromI32(1));
+    po.save();
   }
 }
 
